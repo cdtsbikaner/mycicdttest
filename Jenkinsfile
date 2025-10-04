@@ -7,7 +7,7 @@ pipeline {
 		docker_token = 'docker-token'
 	}
 	parameters {
-        string(name: 'person', defaultValue: 'Ekamjeet Singh', description: 'Enter your username to continue this Job')
+      //  string(name: 'person', defaultValue: 'Ekamjeet Singh', description: 'Enter your username to continue this Job')
 		choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Select environment to run this JOB')
     }
     stages {
@@ -39,7 +39,7 @@ pipeline {
               steps{
 				sh  'echo $person'
 			//	echo "Username: ${params.person}"
-				 echo "Environment: ${params.ENVIRONMENT}"
+				sh  'echo ${params.ENVIRONMENT} '
             }
         }
     }
