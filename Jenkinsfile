@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-		x = 200
-		y = 300
+		x = 400
+		y = 800
 	}
     stages {
         stage('Build Information'){
