@@ -6,6 +6,9 @@ pipeline {
 		git_token = 'github-token'
 		docker_token = 'docker-token'
 	}
+	parameters {
+        string(name: 'person', defaultValue: 'Ekamjeet Singh', description: 'Enter your username to continue this Job')
+    }
     stages {
         stage('Build Information'){
          steps{
@@ -29,6 +32,12 @@ pipeline {
 			   sh 'echo $y'
 			   sh 'echo  $git_token'
 			  sh 'echo  $docker_token'
+            }
+        }
+		stage('Show Parameters values'){
+              steps{
+			//	sh  'echo $person'
+				echo "Username: ${params.USERNAME}"
             }
         }
     }
