@@ -42,7 +42,7 @@ pipeline {
               steps{
 				sh  'echo $person'
 			//	echo "Username: ${params.person}"
-				sh  'echo ${params.ENVIRONMENT} '
+				"echo ${params.ENVIRONMENT}"
             }
         }
     }
