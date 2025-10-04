@@ -10,6 +10,9 @@ pipeline {
         string(name: 'person', defaultValue: 'Ekamjeet Singh', description: 'Enter your username to continue this Job')
 		choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Select environment to run this JOB')
     }
+	triggers {
+        githubPush()   // reacts to GitHub webhook events
+    }
     stages {
         stage('Build Information'){
          steps{
