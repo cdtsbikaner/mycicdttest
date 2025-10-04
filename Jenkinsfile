@@ -3,6 +3,8 @@ pipeline {
     environment {
 		x = 400
 		y = 800
+		git-token = 'github-token'
+		docker-token = 'docker-token'
 	}
     stages {
         stage('Build Information'){
@@ -25,6 +27,8 @@ pipeline {
                echo 'Red printing'
 			   sh 'echo $x'
 			   sh 'echo $y'
+			   sh 'echo  $github-token'
+			  sh 'echo  $dockerhub-token'
             }
         }
     }
