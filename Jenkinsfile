@@ -36,8 +36,8 @@ pipeline {
         }
 		stage('Show Parameters values'){
               steps{
-			//	sh  'echo $person'
-				echo "Username: ${params.person}"
+				sh  'echo $person'
+			//	echo "Username: ${params.person}"
             }
         }
     }
